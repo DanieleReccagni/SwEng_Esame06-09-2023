@@ -33,6 +33,11 @@ public class InputPresenter implements Presenter {
         }
 
         String[] split = splittata[3].split("/");
+        if (split.length != 3) {
+            view.showError("Data inizio non corretta");
+            return;
+        }
+
         model.aggiungi(new Richiesta(splittata[0], Integer.parseInt(splittata[1]), splittata[2],
                 LocalDate.of(Integer.parseInt(split[2]), Integer.parseInt(split[1]), Integer.parseInt(split[0]))));
         view.showSuccess();
