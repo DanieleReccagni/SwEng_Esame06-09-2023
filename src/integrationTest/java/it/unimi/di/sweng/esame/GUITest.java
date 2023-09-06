@@ -83,7 +83,7 @@ public class GUITest {
     verifyThat(elencoSinistra[7], hasText(""));
   }
 
-  @Test @Disabled
+  @Test
   public void situazioneInizialeVistaDestra(FxRobot robot) {
     verifyThat(elencoDestra[0], hasText("1 : dal 03/09/2023 - BG202"));
     verifyThat(elencoDestra[1], hasText("2 : dal 03/09/2023 - MI205"));
