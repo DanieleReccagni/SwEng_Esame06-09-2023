@@ -2,6 +2,8 @@ package it.unimi.di.sweng.esame;
 
 
 import it.unimi.di.sweng.esame.model.Modello;
+import it.unimi.di.sweng.esame.presenter.DisplayPresenter;
+import it.unimi.di.sweng.esame.presenter.StrategyLeft;
 import it.unimi.di.sweng.esame.views.DisplayView;
 import it.unimi.di.sweng.esame.views.USRView;
 import javafx.application.Application;
@@ -59,14 +61,14 @@ public class Main extends Application {
       gridPane.add(inserimentoAccettazioniView[i], i % 2,  2);
     }
 
-    //TODO creare presenters e connettere model e view
-
     Modello model = new Modello();
 
+    DisplayPresenter d1 = new DisplayPresenter(leftSideView, new StrategyLeft());
+    model.addObserver(d1);
 
 
     model.readFile();
-    //model.notifyObservers();
+    model.notifyObservers();
 
     Scene scene = new Scene(gridPane);
     primaryStage.setScene(scene);
