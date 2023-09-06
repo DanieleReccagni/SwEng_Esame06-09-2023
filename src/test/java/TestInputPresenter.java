@@ -47,4 +47,16 @@ public class TestInputPresenter {
         SUT.action("Inserisci", "LC169:8:Lecco:11-09-2023");
         verify(view).showError("Data inizio non corretta");
     }
+
+    @Test
+    public void testCodiceInsegnanteNonValido() {
+        Modello model = mock(Modello.class);
+        USRView view = mock(USRView.class);
+        Presenter SUT = new InputPresenter(model, view);
+
+        SUT.action("Accetta", "PP02:1:1");
+        SUT.action("Accetta", "0002:1:1");
+        SUT.action("Accetta", "P002Q:1:1");
+        verify(view, times(3)).showError("Codice insegnante non valido");
+    }
 }
