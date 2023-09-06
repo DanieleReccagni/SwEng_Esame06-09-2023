@@ -4,13 +4,20 @@ import it.unimi.di.sweng.esame.Observable;
 import it.unimi.di.sweng.esame.model.Richiesta;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class StrategyRight implements StrategyDisplay {
     @Override
     public List<Richiesta> getData(@NotNull Observable<Map<String, Richiesta>> subject) {
-        return null;
+        List<Richiesta> lista = new ArrayList<>(subject.getState().values());
+        lista.sort((o1, o2) -> {
+            if (o1.durata() == o2.durata())
+                return o1.data().compareTo(o2.data());
+            return o2.durata() - o1.durata();
+        });
+        return lista;
     }
 
     @Override
