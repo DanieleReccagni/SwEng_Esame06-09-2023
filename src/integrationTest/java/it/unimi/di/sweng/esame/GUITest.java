@@ -130,7 +130,7 @@ public class GUITest {
     verifyThat(acceptErrorMessage[0], hasText("Richiesta non presente"));
   }
 
-  @Test @Disabled
+  @Test
   public void testDataNonValida(FxRobot robot) {
     selezioneContenutoCasellaTesto(robot, insertTextMessage[0]);
     robot.write("LC169:8:Lecco:11-09-2023");
