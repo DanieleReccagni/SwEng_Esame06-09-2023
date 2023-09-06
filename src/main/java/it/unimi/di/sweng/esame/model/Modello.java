@@ -46,7 +46,20 @@ public class Modello implements Observable<Map<String, Richiesta>> {
       obs.update(this);
   }
 
-  public void aggiungi(@NotNull Richiesta richiesta) {
+  public void aggiungi(@NotNull Richiesta r) {
+    StringBuilder s = new StringBuilder();
+    if (r.data().getDayOfMonth() < 10)
+      s.append("0");
+    s.append(r.data().getDayOfMonth());
+    s.append("/");
+    if (r.data().getMonth().getValue() < 10)
+      s.append("0");
+    s.append(r.data().getMonth().getValue());
+    s.append("/");
+    s.append(r.data().getYear());
 
+    richieste.put(r.codice() + " " + s, r);
+
+    notifyObservers();
   }
 }
