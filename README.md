@@ -2,7 +2,7 @@
 
 # Esame del 6 settembre 2023
 
-* `<Cognome> <Nome> <matricola>`
+* `Reccagni Daniele 975771`
 
 Dopo avere effettuato il **fork** su `gitlab.di.unimi.it` e il **clone** in
 locale, modificate questo README

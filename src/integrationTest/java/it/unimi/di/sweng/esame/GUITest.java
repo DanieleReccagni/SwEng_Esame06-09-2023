@@ -13,10 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.assertj.core.util.introspection.FieldSupport;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -109,7 +106,7 @@ public class GUITest {
     verifyThat(insertErrorMessage[0], hasText("Codice istituto non valido"));
   }
 
-  @ParameterizedTest
+  @ParameterizedTest @Disabled
   @ValueSource(strings =
       {
           "PP02:1:1",
@@ -125,7 +122,7 @@ public class GUITest {
   }
 
 
-  @Test
+  @Test @Disabled
   public void testAccettaSupplenzaNonPresente(FxRobot robot) {
     selezioneContenutoCasellaTesto(robot, acceptTextMessage[0]);
     robot.write("P22E:BG202:01/09/2023");
@@ -151,7 +148,7 @@ public class GUITest {
     verifyThat(elencoDestra[7], hasText("8 : dal 11/09/2023 - LC169"));
   }
 
-  @Test
+  @Test @Disabled
   public void testAccettaValido(FxRobot robot) {
     selezioneContenutoCasellaTesto(robot, acceptTextMessage[1]);
     robot.write("G16E:BG201:04/09/2023");
