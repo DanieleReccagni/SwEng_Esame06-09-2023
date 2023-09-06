@@ -1,13 +1,12 @@
 package it.unimi.di.sweng.esame.model;
 
 import it.unimi.di.sweng.esame.Observable;
+import it.unimi.di.sweng.esame.Observer;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Modello implements Observable<Map<String, Richiesta>> {
@@ -31,5 +30,15 @@ public class Modello implements Observable<Map<String, Richiesta>> {
   @Override
   public @NotNull Map<String, Richiesta> getState() {
     return new HashMap<>(richieste);
+  }
+
+  @Override
+  public void addObserver(@NotNull Observer<Map<String, Richiesta>> obs) {
+
+  }
+
+  @Override
+  public void notifyObservers() {
+
   }
 }
