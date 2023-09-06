@@ -19,4 +19,9 @@ public class StrategyLeft implements StrategyDisplay {
         });
         return lista;
     }
+
+    @Override
+    public List<String> stampaInizio(@NotNull List<Richiesta> lista) {
+        return null;
+    }
 }

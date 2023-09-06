@@ -9,4 +9,5 @@ import java.util.Map;
 
 public interface StrategyDisplay {
     List<Richiesta> getData(@NotNull Observable<Map<String,Richiesta>> subject);
+    List<String> stampaInizio(@NotNull List<Richiesta> lista);
 }
