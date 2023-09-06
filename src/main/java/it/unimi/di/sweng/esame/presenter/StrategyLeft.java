@@ -22,6 +22,9 @@ public class StrategyLeft implements StrategyDisplay {
 
     @Override
     public List<String> stampaInizio(@NotNull List<Richiesta> lista) {
-        return null;
+        List<String> ritorna = new ArrayList<>();
+        for (Richiesta r : lista)
+            ritorna.add(r.comune());
+        return ritorna;
     }
 }
