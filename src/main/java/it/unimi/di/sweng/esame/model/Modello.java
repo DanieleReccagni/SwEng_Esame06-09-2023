@@ -11,7 +11,7 @@ import java.util.*;
 
 public class Modello implements Observable<Map<String, Richiesta>> {
 
-  private final @NotNull Map<String,Richiesta> richieste = new HashMap<>();
+  private final @NotNull Map<String,Richiesta> richieste = new LinkedHashMap<>();
   private final @NotNull List<Observer<Map<String,Richiesta>>> observers = new ArrayList<>();
 
   public void readFile() {
