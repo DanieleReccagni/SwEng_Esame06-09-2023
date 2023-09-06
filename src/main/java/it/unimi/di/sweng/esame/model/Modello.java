@@ -45,4 +45,8 @@ public class Modello implements Observable<Map<String, Richiesta>> {
     for (Observer<Map<String,Richiesta>> obs : observers)
       obs.update(this);
   }
+
+  public void aggiungi(@NotNull Richiesta richiesta) {
+
+  }
 }

@@ -36,4 +36,12 @@ public class TestModello {
         verify(obs1).update(eq(SUT));
     }
 
+    @Test
+    public void testAggiungi() {
+        Modello SUT = new Modello();
+
+        SUT.aggiungi(new Richiesta("RO123", 2, "Roma", LocalDate.of(2023, 4, 21)));
+
+        assertThat(SUT.getState().get("RO123 21/04/2023")).isEqualTo(new Richiesta("RO123", 2, "Roma", LocalDate.of(2023, 4, 21)));
+    }
 }
