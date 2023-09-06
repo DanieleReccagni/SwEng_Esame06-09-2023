@@ -27,8 +27,8 @@ public class TestStrategyRight {
         when(model.getState()).thenReturn(mappa);
 
         List<Richiesta> lista = new ArrayList<>();
-        lista.add(new Richiesta("PV004", 5, "Pavia", LocalDate.of(2023, 9, 3)));
         lista.add(new Richiesta("MI202", 3, "Milano", LocalDate.of(2023, 9, 3)));
+        lista.add(new Richiesta("PV004", 5, "Pavia", LocalDate.of(2023, 9, 3)));
 
         assertThat(SUT.getData(model)).isEqualTo(lista);
     }

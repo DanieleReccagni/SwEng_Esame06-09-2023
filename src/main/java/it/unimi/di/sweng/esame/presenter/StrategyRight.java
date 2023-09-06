@@ -15,7 +15,7 @@ public class StrategyRight implements StrategyDisplay {
         lista.sort((o1, o2) -> {
             if (o1.durata() == o2.durata())
                 return o1.data().compareTo(o2.data());
-            return o2.durata() - o1.durata();
+            return o1.durata() - o2.durata();
         });
         return lista;
     }
