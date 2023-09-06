@@ -22,17 +22,14 @@ public class Modello implements Observable<Map<String, Richiesta>> {
     while (s.hasNextLine()) {
       String linea = s.nextLine();
       String[] el = linea.split(":");
-
-      // memorizzare quanto letto
-
-      System.err.println(linea);
+      String[] split = el[3].split("/");
+      richieste.put(el[0] + " " + el[3], new Richiesta(el[0], Integer.parseInt(el[1]), el[2],
+              LocalDate.of(Integer.parseInt(split[2]), Integer.parseInt(split[1]), Integer.parseInt(split[0]))));
     }
   }
 
   @Override
   public @NotNull Map<String, Richiesta> getState() {
-    Map<String,Richiesta> ritorna = new HashMap<>();
-    ritorna.put("A", new Richiesta("A", 23, "B", LocalDate.of(2023, 6, 4)));
-    return ritorna;
+    return new HashMap<>(richieste);
   }
 }
