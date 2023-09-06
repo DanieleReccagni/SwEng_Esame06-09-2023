@@ -32,4 +32,19 @@ public class TestStrategyRight {
 
         assertThat(SUT.getData(model)).isEqualTo(lista);
     }
+
+    @Test
+    public void testStampaInizio() {
+        StrategyDisplay SUT = new StrategyRight();
+
+        List<Richiesta> richieste = new ArrayList<>();
+        richieste.add(new Richiesta("MI202", 3, "Milano", LocalDate.of(2023, 9, 3)));
+        richieste.add(new Richiesta("PV004", 5, "Pavia", LocalDate.of(2023, 9, 3)));
+
+        List<String> lista = new ArrayList<>();
+        lista.add(String.valueOf(3));
+        lista.add(String.valueOf(5));
+
+        assertThat(SUT.stampaInizio(richieste)).isEqualTo(lista);
+    }
 }
