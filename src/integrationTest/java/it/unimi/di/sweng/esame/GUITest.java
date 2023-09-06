@@ -91,7 +91,7 @@ public class GUITest {
     verifyThat(elencoDestra[7], hasText(""));
   }
 
-  @ParameterizedTest @Disabled
+  @ParameterizedTest
   @ValueSource(strings =
       {
           "PP02:1:1:1",
