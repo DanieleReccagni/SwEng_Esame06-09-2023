@@ -3,6 +3,7 @@ package it.unimi.di.sweng.esame;
 
 import it.unimi.di.sweng.esame.model.Modello;
 import it.unimi.di.sweng.esame.presenter.DisplayPresenter;
+import it.unimi.di.sweng.esame.presenter.InputPresenter;
 import it.unimi.di.sweng.esame.presenter.StrategyLeft;
 import it.unimi.di.sweng.esame.presenter.StrategyRight;
 import it.unimi.di.sweng.esame.views.DisplayView;
@@ -69,6 +70,11 @@ public class Main extends Application {
 
     DisplayPresenter d2 = new DisplayPresenter(rightSideView, new StrategyRight());
     model.addObserver(d2);
+
+    for (int j=0; j<Main.NUMPOSTAZIONI; j++) {
+      InputPresenter i = new InputPresenter(model, inserimentoRichiesteView[j]);
+      inserimentoRichiesteView[j].addHandlers(i);
+    }
 
     model.readFile();
     model.notifyObservers();

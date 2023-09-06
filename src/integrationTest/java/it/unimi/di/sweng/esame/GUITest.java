@@ -138,7 +138,7 @@ public class GUITest {
     verifyThat(insertErrorMessage[0], hasText("Data inizio non corretta"));
   }
 
-  @Test @Disabled
+  @Test
   public void testInsertValido(FxRobot robot) {
     selezioneContenutoCasellaTesto(robot, insertTextMessage[0]);
     robot.write("LC169:8:Lecco:11/09/2023");
